@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(35, 35, 35);
+}
+body::-webkit-scrollbar {
+  width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 20%; /* 스크롤바의 길이 */
+  background: rgba(0, 0, 0, 0.7);; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);  /*스크롤바 뒷 배경 색상*/
+}
+hr {
+  height: 1px;
+  margin-bottom: 12px;
+  background-color: rgb(87, 87, 87);
+  border: none;
+}
+.App {
+  height: 100px;
+  line-height: 100px;
+  background-color: #eee;
+  text-align: center;
+}
+.round {
+  border-radius: 7px;
+}
+.BackColor {
+  background-color: rgb(44, 44, 44);
+  padding-bottom: 30px;
+}

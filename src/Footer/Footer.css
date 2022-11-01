@@ -1,0 +1,12 @@
+.Footer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  margin: 10px auto;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgb(141, 141, 141);
+  text-align: left;
+}

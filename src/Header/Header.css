@@ -1,0 +1,17 @@
+.Header {
+  width: 100%;
+  max-width: 1200px;
+  height: 85px;
+  line-height: 85px;
+  padding-left: 35px;
+  margin: 0 auto;
+  font-size: 42px;
+  font-weight: bolder;
+  color: rgb(208, 219, 44);
+  cursor: pointer;
+}
+.Header:hover {
+  padding-left: 40px;
+  transition: 300ms;
+  color: rgb(190, 190, 255);
+}
