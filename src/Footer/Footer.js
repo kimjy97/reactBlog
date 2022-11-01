@@ -5,8 +5,8 @@ function Footer() {
     <div className="Footer">
       <p>Copyrights ⓒ.poot97 All Rights Reserved.</p>
       <br></br>
-      <p>tel. 010-1234-5678</p>
-      <p>mail. abcd@gmail.com</p>
+      <p>tel. 010-2744-9658</p>
+      <p>mail. poot972@gmail.com</p>
       <br></br>
       <p>footer is here!</p>
       <br></br>
