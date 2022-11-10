@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "title": "[Web] 01. 웹디자인이란 무엇일까? 한번 알아봅시다.",
+        "content": "첫번째 글 내용 입니다.",
+        "date": "2022. 11. 02",
+        "time": "AM 18 : 24",
+        "name": "JongYeon",
+        "cmtnum": "13",
+        "view": "1,283",
+        "like": "5",
+        "tags": [
+            "Web-designer",
+            "web",
+            "html"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "[Web] 02. 웹퍼블리셔는 어떻게 생겨났을까?",
+        "content": "두번째 글 내용 입니다.",
+        "date": "2022. 11. 05",
+        "time": "AM 19 : 02",
+        "name": "JongYeon",
+        "cmtnum": "6",
+        "view": "1,015",
+        "like": "4",
+        "tags": [
+            "Web-publisher",
+            "web",
+            "html"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "[Web] 03. 프론트엔드 개발자는 어떤 것을 할까?",
+        "content": "세번째 글 내용 입니다.",
+        "date": "2022. 11. 08",
+        "time": "AM 19 : 17",
+        "name": "JongYeon",
+        "cmtnum": "3",
+        "view": "527",
+        "like": "1",
+        "tags": [
+            "front-end",
+            "developer",
+            "web",
+            "개발자"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "[Web] 03. 프론트엔드 개발자는 어떤 것을 할까?",
+        "content": "세번째 글 내용 입니다.",
+        "date": "2022. 11. 08",
+        "time": "AM 19 : 17",
+        "name": "JongYeon",
+        "cmtnum": "3",
+        "view": "527",
+        "like": "1",
+        "tags": [
+            "front-end",
+            "developer",
+            "web",
+            "개발자"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "[Web] 03. 프론트엔드 개발자는 어떤 것을 할까?",
+        "content": "세번째 글 내용 입니다.",
+        "date": "2022. 11. 08",
+        "time": "AM 19 : 17",
+        "name": "JongYeon",
+        "cmtnum": "3",
+        "view": "527",
+        "like": "1",
+        "tags": [
+            "front-end",
+            "developer",
+            "web",
+            "개발자"
+        ]
+    }
+]

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Avant Garde";
+  font-weight: 300;
+  src:
+    url(./font/AvantGarde/AvantGarde_bk.woff2) format("woff2");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039
+}
+@font-face {
+  font-family: "Avant Garde";
+  font-weight: 500;
+  src:
+    url(./font/AvantGarde/AvantGarde_md.woff2) format("woff2");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039
+}
+@font-face {
+  font-family: "Avant Garde";
+  font-weight: 700;
+  src:
+    url(./font/AvantGarde/AvantGarde_demi.woff2) format("woff2");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039
+}
+@font-face {
+  font-family: "Avant Garde";
+  font-weight: 900;
+  src:
+    url(./font/AvantGarde/AvantGarde_bold.woff2) format("woff2");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039
+}
+@font-face {
+	font-family: 'SUIT Variable';
+	font-weight: 100 900;
+	src: url(./font/SUIT/SUIT-Variable.woff2) format('woff2-variations');
+  unicode-range: U+AC00-D7A3, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Avant Garde", "SUIT Variable","맑은 고딕";
+  font-weight: 350;
+  /*공통 변수 지정*/
+  --maingray: rgb(29, 33, 35);
+  --maingray_gradient: linear-gradient(180deg, rgba(29, 33, 35,1) 0%, rgba(29, 33, 35,1) 85%, rgba(29, 33, 35,0) 100%);
+  --footergray: rgb(26, 28, 29);
+  --main_color: rgb(255, 255, 255);
+  --title_color: rgb(190, 190, 220);
+  --front_color: rgb(255,255,255);
+  --back_color: rgb(255,255,255);
+  --header_height: 85px;
+  --header_index: 1000;
+  --max_width: 900px;
+}
+html {
+  top: 0;
+  left: 0;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: var(--footergray);
+  color: white;
+}
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 13px;  /* 스크롤바의 너비 */
+}
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: rgba(0, 230, 255, 0.11); /* 스크롤바의 색상 */
+  border-radius: 0px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 230, 255, 0.17);
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);  /*스크롤바 뒷 배경 색상*/
+}
+li {
+  display: inline;
+  list-style: none;
+}
+input {
+  outline: none;
+  background: none;
+  border: 0px solid black;
+}
+.App {
+  position: relative;
+  background-color: var(--maingray);
+}

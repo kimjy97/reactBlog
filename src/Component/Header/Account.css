@@ -1,0 +1,49 @@
+.Account {
+    position: relative;
+    display: flex;
+    float: right;
+    height: 48px;
+    color: rgb(213, 213, 213);
+    background: rgba(0, 187, 208, 0.12);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    box-sizing: content-box;
+    cursor: pointer;
+    animation-name: accountAniRe;
+    animation-duration: 0.15s;
+    transition: 200ms;
+    z-index: calc(var(--header_index) + 3);
+}
+.Account:hover {
+    padding-top: 6px;
+    color: white;
+}
+
+.Account p {
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 48px;
+}
+.account_img {
+    position: relative;
+    top: -6px;
+    width: 54px;
+    height: 54px;
+    padding-top: 6px;
+    background: url('../../img/user.png') 50% 70% no-repeat;
+    background-color: rgba(0, 187, 208, 0.1);
+    background-size: 30px 30px;
+    border-radius: 0 0 10px 0;
+}
+
+/* 미디어 쿼리 */
+
+@media (max-width:1280px) {
+
+    /* isPC 기준 태블릿 범위 */
+
+    .Account {
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        backdrop-filter: blur(20px);
+    }
+}
