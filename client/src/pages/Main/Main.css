@@ -1,73 +1,107 @@
 a {
     text-decoration: none;
 }
+
 .Main {
     width: 100%;
-    height: 900px;
+    min-height: 900px;
+    margin-bottom: 200px;
     text-align: center;
 }
+
 .Main_wrap {
     width: 100%;
     max-width: var(--max_width);
     margin: 0 auto;
 }
+
 .mainpage {
     font-size: 2.3rem;
     font-weight: 300;
     margin-top: 100px;
     margin-bottom: 120px;
 }
+
 .flex {
     display: flex;
     min-width: 0;
 }
+
+.postTags_container {
+    display: flex;
+}
+
 .postButton_wrap {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
     font-size: 0.9rem;
 }
+
 .postButton {
+    position: relative;
     width: 100%;
     display: flex;
     padding-right: 20px;
+    margin-bottom: 0px;
     border-radius: 0px;
     border-bottom: 1px solid rgb(42, 42, 49);
     color: white;
     text-align: left;
     background-color: rgba(60, 60, 70, 0.6);
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
     user-select: none;
-    overflow: hidden;
     cursor: pointer;
-    transition: 150ms;
+    overflow: hidden;
     justify-content: space-between;
+    transition: 150ms;
 }
+
+.postButton .inner {
+    display: flex;
+    overflow: hidden;
+}
+
+.postButton a {
+    min-width: 0;
+}
+
+.postButton .inner a {
+
+    min-width: 0;
+}
+
 .postButton .flex:first-child {
+    width: 100%;
     flex: 1;
 }
+
 .preloadButton {
     width: 15px;
     min-width: 15px;
     height: 100%;
     margin-right: 15px;
     background-color: rgba(30, 30, 45, 0.45);
-    transition: 200ms;
+    transition: background-color 200ms;
 }
-.postButton p {
+
+.postButton .flex p {
     margin: 15px 0;
 }
+
 .post-title {
     color: rgb(255, 255, 255);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 .post-tag {
     color: rgb(255, 245, 172);
     padding-right: 8px;
     cursor: pointer;
 }
+
 .post-date {
     padding-left: 15px;
     font-size: 0.8rem;
@@ -75,16 +109,21 @@ a {
     white-space: nowrap;
 }
 
+@media (hover: hover) {
+    .post-tag:hover {
+        font-weight: 900;
+    }
 
-.post-tag:hover {
-    font-weight: 900;
-}
-.postButton:hover {
-    background-color: rgba(65, 65, 80, 0.65);
-}
-.postButton:hover .preloadButton {
-    width: 22px;
-}
-.preloadButton:hover {
-    background-color: rgba(30, 30, 45, 0.65);
+    .postButton:hover {
+        background-color: rgba(65, 65, 80, 0.65);
+    }
+
+    .postButton:hover .preloadButton {
+        width: 15px;
+        /*22px*/
+    }
+
+    .preloadButton:hover {
+        background-color: rgba(30, 30, 45, 0.65);
+    }
 }

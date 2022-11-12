@@ -1,0 +1,23 @@
+.NoPage {
+    width: 100%;
+    max-width: var(--max_width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.NoPage_container {
+    padding: 20px;
+    padding-top: 50px;
+}
+
+.NoPage_container p:first-child {
+    margin: 30px 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: rgb(183, 0, 0);
+}
+
+.NoPage_container p:last-child {
+    line-height: 1.6rem;
+    font-size: 1rem;
+}

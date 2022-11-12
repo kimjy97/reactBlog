@@ -1,6 +1,6 @@
 .PostDetail {
   position: absolute;
-  top: 160px;
+  top: 250px;
   right: -190px;
   height: 100%;
   color: rgb(112, 112, 112);
@@ -51,13 +51,13 @@
 /* 아이콘 부분 */
 
 .comment_img {
-  background: url('../../../img/comment3.png') 50% 55% no-repeat;
+  background: url('../../../img/comment3.png') 50% 45% no-repeat;
 }
 .view_img {
-  background: url('../../../img/view2.png') 50% 50% no-repeat;
+  background: url('../../../img/view2.png') 50% 45% no-repeat;
 }
 .like_img {
-  background: url('../../../img/like2.png') 50% 50% no-repeat;
+  background: url('../../../img/like2.png') 50% 40% no-repeat;
   transition: background-size 200ms;
 }
 
@@ -155,7 +155,7 @@
 
   .PostDetail {
     position: relative;
-    top: 0;
+    top: -5px;
     right: auto;
     height: 0px;
   }

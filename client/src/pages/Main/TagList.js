@@ -30,7 +30,7 @@ function TagList(props) {
     return (
         <div className='TagList'>
             <li>
-                <p ref={elem => targetRef.current[0] = elem} onClick={(e) => tagClickEvent(e, null)}>ALL</p>
+                <p ref={elem => targetRef.current[0] = elem} onClick={() => tagClickEvent(0, null)}>ALL</p>
             </li>
             { taglist }
         </div>

@@ -1,17 +1,23 @@
 import './Contents.css';
 import PostDetail from './PostDetail/PostDetail';
 import whatDevice from "../../Common/CommonVar";
-import { useRef, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
 import usePostData from './usePostData';
+import NoPage from './NoPage';
+
+import { useRef, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+
 
 function Contents() {
+    const navigate = useNavigate();
     const targetRef = useRef();
     const targetRef2 = useRef();
+    const targetContents = useRef();
     const [titleHeightInt, settitleHeightInt] = useState(0);
     const isPC = whatDevice();
     const [listItem, setlistItem] = useState();
+    const [warninghShow, setwraningShow] = useState(false);
 
     const _url = 'http://localhost:5000/postList';
     const location = useLocation();
@@ -19,20 +25,19 @@ function Contents() {
 
 
     // 현재 글 정보 가져오기
-    const [postData, setpostData] = useState({ id: '', title: '', content: '', date: '', time: '', name: '', cmtnum: '', view: '', like: '', tags: [] });
+    
     const _data = usePostData(_url, location.pathname.slice(1));
 
     useEffect(() => {
         if (_data) {
-            console.log(_data);
             if (_data === 'empty') {
-                /* 빈페이지 출력 */
-                alert("현재 페이지가 비어있습니다.");
-                window.location.href ='/';
+                /* 비어있는 게시글이므로 뒤로가기 */
+                targetContents.current.style.display = 'none';
+                setwraningShow(true);
             } else {
-                setpostData(_data);
+                
                 setlistItem(_data.tags.map((tagname, index) =>
-                    <li key={index}><span>{tagname}</span></li>))
+                    <li key={index}><p>{tagname}</p></li>))
                 setlocationState(_data);
             }
         }
@@ -44,7 +49,7 @@ function Contents() {
             setlocationState(_state);
 
             setlistItem(_state.tags.map((tagname, index) =>
-                <li key={index}><span>{tagname}</span></li>))
+                <li key={index}><p>{tagname}</p></li>))
         }
     }, [location]);
 
@@ -91,7 +96,8 @@ function Contents() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2, ease: "easeOut" }}>
-            <div className='contents_container'>
+            <NoPage show={ warninghShow } location={location} />
+            <div className='contents_container' ref={ targetContents }>
                 <div className='contents_wrap'>
                     <div className='contents_title_container'>
                         <div className='contents_title_2' ref={targetRef}><p>{locationState.title}</p></div>

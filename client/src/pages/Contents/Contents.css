@@ -1,6 +1,6 @@
 hr {
     height: 0px;
-    margin: 40px 0;
+    margin: 35px 0;
     background-color: rgb(87, 87, 87);
     border: none;
 }
@@ -121,17 +121,23 @@ hr {
     margin: 0 10px;
     display: flex;
     justify-content: space-between;
+    flex: 1;
 }
 
 .tags {
     position: relative;
 }
+.tags ul{
+    display: flex;
+    flex-wrap: wrap;
+}
 .tags li {
     margin-right: 12px;
 }
-.tags li span {
+.tags li p {
     border-radius: 0px;
     padding: 5px 10px;
+    margin-bottom: 10px;
     font-size: 0.8rem;
     color: rgb(210, 210, 210);
     background-color: rgba(200, 200, 255, 0.18);
@@ -178,7 +184,7 @@ hr {
         transition: 200ms;
     }
 
-    .tags li:hover span {
+    .tags li:hover p {
         color: rgb(245, 245, 245);
         background-color: rgba(200, 200, 255, 0.25);
     }
