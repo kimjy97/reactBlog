@@ -156,6 +156,11 @@ hr {
     transition: 200ms;
 }
 
+.contents_main img {
+    width: 100%;
+    object-fit: cover;
+} 
+
 /* hover */
 
 @media (hover: hover) {
@@ -164,11 +169,11 @@ hr {
     }
 
     .contents_title:hover {
-        filter: brightness(120%) saturate(2200%);
+        color: rgb(142, 142, 188);
     }
 
     .contents_title_2:hover {
-        filter: brightness(120%) saturate(2200%);
+        color: rgb(142, 142, 188);
     }
 
     .postInfo>span:first-child:hover {
@@ -193,9 +198,21 @@ hr {
 /* 미디어 쿼리 */
 
 @media (max-width:1280px) {
-
-    /* isPC 기준 태블릿 범위 */
+/* isPC 기준 태블릿 범위 */
     .contents_title_2 {
         display: none;
+    }
+    * {
+    --max_width: 1080px;
+    }
+}
+
+@media (max-width:800px) {
+    .contents_main {
+        padding: 0 15px;
+    }
+    .contents_main img {
+        width: calc(100% + 30px);
+        margin-left: -15px;
     }
 }

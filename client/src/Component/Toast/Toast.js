@@ -9,6 +9,7 @@ function Toast() {
     const timer = useRef();
 
     const fadein = () => {
+        targetRef.current.style.zIndex = 'calc(var(--header_index) + 2)';
         targetRef.current.style.height = '38px';
         targetRef.current.style.opacity = '1';
     }
@@ -18,11 +19,11 @@ function Toast() {
         targetRef.current.style.opacity = '0';
         targetRef.current.style.transition = '100ms ease-out';
         clearTimeout(timer.current);
+        targetRef.current.style.zIndex = '0';
     }
 
     useEffect(() => {
         fadeout();
-        console.log('location.state :', location);
         if (location.state) {
             if (location.state.error) {
                 setlocationState(location.state.error)
@@ -38,7 +39,7 @@ function Toast() {
 
     return (
         <div className='Toast' onClick={() => fadeout()} ref={targetRef}>
-            {locationState ? locationState === 'no-login' ? '※ 현재 로그인을 하지않아 [ guest ] 모드입니다. ※': '! UNDEFINED ERROR' : ''}
+            <p>{locationState ? locationState === 'no-login' ? '※ 현재 로그인을 하지않아 [ guest ] 모드입니다. ※': '! UNDEFINED ERROR' : ''}</p>
         </div>
     );
 }

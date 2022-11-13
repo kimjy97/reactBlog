@@ -5,12 +5,6 @@ function NoPage (props) {
     
     const location = props.location;
 
-    useEffect(() => {
-        console.log('props 바껴서 useEffect 실행', props.show);
-        
-    }, [props.show])
-
-    console.log(location)
     return (
         props.show ?
 

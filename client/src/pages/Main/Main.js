@@ -10,7 +10,7 @@ function Main() {
   const _url = 'http://localhost:5000';
   const [postList, setpostList] = useState();
   const [tagname, settagname] = useState();
-  const [postListmode, setpostListmode] = useState(1);
+  const [postListmode, setpostListmode] = useState(2);
   const [_renderToggle, _setrenderToggle] = useState(false);
   const _data = useListData(_url+'/postList', tagname, postListmode);
   const targetRef = useRef();

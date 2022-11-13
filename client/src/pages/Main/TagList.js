@@ -1,17 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
+import { useCookies, removeCookie } from 'react-cookie';
 import axios from 'axios';
 import './TagList.css';
+
 
 function TagList(props) {
 
     const url = props.url;
     const [taglist, settaglist] = useState('');
+    const [cookies, setCookie] = useCookies(['tagSelect']);
     const targetRef = useRef([]);
-
+    
     const tagClickEvent = (e, tagname) => {
         props.tagClick(tagname);
-        targetRef.current.map( tg => tg.style.backgroundColor = 'rgba(100, 100, 170, 0.3)');
+        setCookie('tagSelect', e);
+        
+        targetRef.current.map( tg => {tg.style.backgroundColor = 'rgba(100, 100, 170, 0.3)'; tg.style.color = 'rgb(210, 210, 210)'});
         targetRef.current[e].style.backgroundColor = 'rgba(100, 100, 170, 0.7)';
+        targetRef.current[e].style.color = 'white';
     }
 
     useEffect(() => {
@@ -26,6 +32,16 @@ function TagList(props) {
         });
     }
     },[taglist]);
+
+    useEffect(() => {  
+        if(cookies.tagSelect >= 0) {
+            if(targetRef.current[cookies.tagSelect]){
+            targetRef.current.map( tg => {tg.style.backgroundColor = 'rgba(100, 100, 170, 0.3)'; tg.style.color = 'rgb(210, 210, 210)'});
+            targetRef.current[cookies.tagSelect].style.backgroundColor = 'rgba(100, 100, 170, 0.7)';
+            targetRef.current[cookies.tagSelect].style.color = 'white';
+            }
+        }
+    }, [taglist]);
     
     return (
         <div className='TagList'>

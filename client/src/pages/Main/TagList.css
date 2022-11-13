@@ -36,13 +36,13 @@
 
 /* hover */
 
-@media (hover: hover) {
+
     .TagList li:hover p {
-        color: rgb(245, 245, 245);
-        background-color: rgba(200, 200, 255, 0.25);
+        color: rgb(245, 245, 245) !important;
+        background-color: rgba(200, 200, 255, 0.25)
+        !important;
     }
     .TagList li:first-child:hover p {
-        color: rgb(245, 245, 245);
-        background-color: rgba(120, 120, 220, 0.7);
+        color: rgb(245, 245, 245) !important;
+        background-color: rgba(120, 120, 220, 0.7) !important;
     }
-}

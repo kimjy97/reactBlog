@@ -15,6 +15,15 @@
   --header_height: 85px;
   --header_index: 1000;
   --max_width: 900px;
+  --max_width2: 1000px;
+}
+::-moz-selection {
+  background: rgb(70, 70, 108);
+  color: rgb(255, 255, 255);
+}
+::selection {
+  background: rgb(70, 70, 108);
+  color: rgb(255, 255, 255);
 }
 html {
   top: 0;
