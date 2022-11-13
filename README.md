@@ -1,4 +1,4 @@
-## 🪄 [ Main Project no.002 ] 🪄 나만의 개인 개발 블로그입니다.
+# 🪄 [ Main Project no.002 ] 🪄 나만의 개인 개발 블로그입니다.
 <div align="left">
 <br>
 <img src="https://img.shields.io/badge/REACT.js-61DAFB?style=flat&logo=react&logoColor=white"><img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black">
