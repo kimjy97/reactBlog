@@ -1,0 +1,62 @@
+* {
+    --changemodeComponentWidth: 40px;
+    --changemodeComponentHeight: 40px;
+}
+.ChangePostListMode {
+    display: flex;
+    flex: 1;
+    padding-right: 40px;
+    padding-bottom: 35px;
+    justify-content: end;
+    align-items: end;
+}
+.ChangePostListMode_container {
+    position: relative;
+    display: flex;
+    width: 110px;
+    height: var(--changemodeComponentHeight);
+    background-color: rgba(100, 100, 170, 0.3);
+    justify-content: space-between;
+}
+
+.modeEffect {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left : 35px;
+    line-height: var(--changemodeComponentHeight);
+    margin: 5px;
+    background-color: rgba(100, 100, 170, 0.5);
+    transition: 120ms ease-out;
+}
+
+.ChangePostListMode_container .mode {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    line-height: var(--changemodeComponentHeight);
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: 150ms ease-out;
+}
+
+.ChangePostListMode_container > .mode1 {
+    margin: 5px;
+    margin-right: 0px;
+    background: url('../../img/listStyle_2.png') 50% 50% no-repeat;
+    background-size: 18px 18px;
+    filter: invert(60%);
+}
+.ChangePostListMode_container > .mode2 {
+    margin: 5px;
+    background: url('../../img/listStyle_2.png') 50% 50% no-repeat;
+    background-size: 18px 18px;
+    filter: invert(90%);
+}
+.ChangePostListMode_container > .mode3 {
+    margin: 5px;
+    margin-left: 0px;
+    background: url('../../img/listStyle_2.png') 50% 50% no-repeat;
+    background-size: 18px 18px;
+    filter: invert(60%);
+}

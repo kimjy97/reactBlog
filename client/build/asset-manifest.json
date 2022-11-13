@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d6a6183.css",
-    "main.js": "/static/js/main.f8c87c01.js",
+    "main.css": "/static/css/main.956fca62.css",
+    "main.js": "/static/js/main.e460df40.js",
     "static/media/SUIT-Variable.woff2": "/static/media/SUIT-Variable.c14a317342688a70437e.woff2",
     "static/media/AvantGarde_bk.woff2": "/static/media/AvantGarde_bk.80c295a92e22137aa999.woff2",
     "static/media/AvantGarde_bold.woff2": "/static/media/AvantGarde_bold.49336dda0f0ab1bf2973.woff2",
@@ -10,11 +10,11 @@
     "static/media/view2.png": "/static/media/view2.0b5c67b9c9c6e2b4b7d1.png",
     "static/media/user.png": "/static/media/user.33e7df0963941edbeb70.png",
     "index.html": "/index.html",
-    "main.0d6a6183.css.map": "/static/css/main.0d6a6183.css.map",
-    "main.f8c87c01.js.map": "/static/js/main.f8c87c01.js.map"
+    "main.956fca62.css.map": "/static/css/main.956fca62.css.map",
+    "main.e460df40.js.map": "/static/js/main.e460df40.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d6a6183.css",
-    "static/js/main.f8c87c01.js"
+    "static/css/main.956fca62.css",
+    "static/js/main.e460df40.js"
   ]
 }

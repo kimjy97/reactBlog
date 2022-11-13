@@ -1,6 +1,7 @@
 import './Main.css';
 import useListData from './useListData';
 import TagList from './TagList';
+import ChangePostListMode from './ChangePostListMode';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from "react";
 
@@ -11,7 +12,6 @@ function Main() {
   const [postList, setpostList] = useState();
   const [tagname, settagname] = useState();
   const [postListmode, setpostListmode] = useState(2);
-  const [_renderToggle, _setrenderToggle] = useState(false);
   const _data = useListData(_url+'/postList', tagname, postListmode);
   const targetRef = useRef();
 
@@ -22,6 +22,10 @@ function Main() {
 
   const postListBytag = (e) => {
     settagname(e);
+  }
+
+  const changePostListMode = (mode) => {
+    setpostListmode(mode);
   }
 
   return (
@@ -35,12 +39,12 @@ function Main() {
         <motion.p className='mainpage'
         initial={{ opacity: 0}}
         animate={{ opacity: 1}}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2}}
-        onClick={()=> setpostListmode(postListmode === 1 ? 2 : 1)}>
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2}}>
           <b>&lt;Main Page /&gt;</b>
         </motion.p>
       <div className='postTags_container' ref={targetRef}>
-        <TagList url={ _url } tagClick={postListBytag}/>  
+        <TagList url={ _url } tagClick={postListBytag}/>
+        <ChangePostListMode changeMode={changePostListMode}/>
       </div>
       <div className='postButton_wrap'>
         { !postList? '' : postList }
