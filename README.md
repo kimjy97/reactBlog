@@ -35,3 +35,9 @@
   ㄴ useListData.js > useEffect 부분 else if 로 조건 하나를 더 만듦. ( tagname === 'all' ) 일 경우 리스트 전체 출력.
   ㄴ TagList.js > useEffect 부분 ( 쿠키값 === 'all ) 일 경우 아무것도 안하는 코드 넣음.
   ㄴ all 버튼 ocClick 에서 함수호출에 매개변수 'all' 넣음.
+
+✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️
+### 성능 최적화를 위해 처음부터 다시!!
+ - 코드 구조화, 모듈화
+ - UI 재구성
+ - Performance 최적화
