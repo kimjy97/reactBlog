@@ -1,0 +1,59 @@
+$changemodeComponentWidth: 40px;
+$changemodeComponentHeight: 40px;
+
+.ChangePostListMode {
+    display: flex;
+    flex: 1;
+    padding-bottom: 32px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.ChangePostListMode_container {
+    position: relative;
+    display: flex;
+    width: 110px;
+    height: $changemodeComponentHeight;
+    background-color: rgba(100, 100, 170, 0.3);
+    justify-content: space-between;
+
+    &> .mode {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        line-height: $changemodeComponentHeight;
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        transition: 150ms ease-out;
+    }
+    &> .mode1 {
+        margin: 5px;
+        margin-right: 0px;
+        background: url('../../../../img/listStyle_1.png') 50% 50% no-repeat;
+        background-size: 18px 18px;
+        filter: invert(65%);
+    }
+    &> .mode2 {
+        margin: 5px;
+        background: url('../../../../img/listStyle_2.png') 50% 50% no-repeat;
+        background-size: 18px 18px;
+        filter: invert(65%);
+    }
+    &> .mode3 {
+        margin: 5px;
+        margin-left: 0px;
+        background: url('../../../../img/listStyle_3.png') 50% 50% no-repeat;
+        background-size: 18px 18px;
+        filter: invert(65%);
+    }
+}
+
+.modeEffect {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left : 0px;
+    line-height: $changemodeComponentHeight;
+    margin: 5px;
+    background-color: rgba(100, 100, 170, 0.5);
+    transition: 120ms ease-out;
+}

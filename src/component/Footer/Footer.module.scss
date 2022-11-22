@@ -1,0 +1,12 @@
+@import '../../common/common.scss';
+
+.Footer_container {
+    width: 100%;
+    max-width: $footerMaxWidth;
+    margin: 0 auto;
+    padding: 25px 30px;
+    font-size: 0.6rem;
+    text-align: left;
+    color: rgb(120, 120, 120);
+    box-sizing: border-box;
+}
