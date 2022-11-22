@@ -31,10 +31,10 @@
 
 #### 수정필요사항
  - backdrop filter : blur()  성능 저하로 삭제 필요.
- - 쿠키로 태그리스트 불러왔을 때 all 태그 버그 : 게시물 데이터를 못불러옴.
-  ㄴ useListData.js > useEffect 부분 else if 로 조건 하나를 더 만듦. ( tagname === 'all' ) 일 경우 리스트 전체 출력.
-  ㄴ TagList.js > useEffect 부분 ( 쿠키값 === 'all ) 일 경우 아무것도 안하는 코드 넣음.
-  ㄴ all 버튼 ocClick 에서 함수호출에 매개변수 'all' 넣음.
+ - 쿠키로 태그리스트 불러왔을 때 all 태그 버그 : 게시물 데이터를 못불러옴. <br>
+  ㄴ useListData.js > useEffect 부분 else if 로 조건 하나를 더 만듦. ( tagname === 'all' ) 일 경우 리스트 전체 출력.<br>
+  ㄴ TagList.js > useEffect 부분 ( 쿠키값 === 'all ) 일 경우 아무것도 안하는 코드 넣음.<br>
+  ㄴ all 버튼 ocClick 에서 함수호출에 매개변수 'all' 넣음.<br>
 
 ✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️
 
@@ -58,8 +58,9 @@
  - 로딩화면 구현
  - 프로필 추가
  - 전체적으로 코드의 가독성을 높임.
+ - github push
 
-### 집가서 수정해야할 사항
+### 수정해야할 사항
  - 현재 게시판 location.state.boardName 이 비어있을때 '' 으로 출력되는 현상 수정
  - tagList의 css 부분 ( minHegiht -> maxHeight / hegiht 지우기 / align-items 지우기 )
 
