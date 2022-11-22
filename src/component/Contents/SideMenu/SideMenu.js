@@ -19,8 +19,9 @@ const SideMenu = () => {
     }, []);
 
     useEffect(() => {
+        if(!location.state?.boardName) setActiveBoard('ALL');
         boardListLoader();
-    }, [activeBoard])
+    }, [activeBoard, location])
 
     const boardListLoader = async () => {
         await axios.get(url + '/boardList').then((Response) => {
@@ -68,14 +69,14 @@ const SideMenu = () => {
                     <hr></hr>
                     <ul className={styles.menuList_container}>
                         <li className={activeBoard === '공지사항' ? `${styles.staticMenu} ${styles.active}` : styles.staticMenu}>
-                            <Link to={'/'} state={{ boardName: '공지사항' }} onClick={() => setActiveBoard('공지사항')}>
+                            <Link to={'/notice'} state={{ boardName: '공지사항' }} onClick={() => setActiveBoard('공지사항')}>
                                 <span className="material-symbols-outlined">arrow_forward_ios</span>
                                 ※ 공지사항 ※
                                 <span>2개월 전</span>
                             </Link>
                         </li>
                         <li className={activeBoard === '방명록' ? `${styles.staticMenu} ${styles.active}` : styles.staticMenu}>
-                            <Link to={'/'} state={{ boardName: '방명록' }} onClick={() => setActiveBoard('방명록')}>
+                            <Link to={'/guestbook'} state={{ boardName: '방명록' }} onClick={() => setActiveBoard('방명록')}>
                                 <span className="material-symbols-outlined">arrow_forward_ios</span>
                                 방명록
                                 <span>방금 전</span>

@@ -88,7 +88,7 @@
     .stickyMenu_container {
         position: sticky;
         top: 25px;
-        padding-bottom: 400px;
+        padding-bottom: 300px;
 
         &>.optionList_container {
             display: flex;
@@ -157,7 +157,7 @@
             }
 
             .staticMenu {
-                color: rgb(255, 161, 161);
+                color: rgb(255, 149, 149);
                 font-size: 0.9rem;
             }
             .staticMenu.active {

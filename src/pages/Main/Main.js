@@ -7,7 +7,7 @@ import Loader from '../../component/Loader/Loader'
 
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Main = () => {
@@ -22,13 +22,10 @@ const Main = () => {
     const [reload, setReload] = useState(0);
     const mainTarget = useRef();
     const location = useLocation();
-    const navigate = useNavigate();
     const [_boardName, _setBoardName] = useState();
 
     // 초기값 설정 //
     useEffect(() => {
-        listLoader();
-
         setSelectedTag('ALL'); // 태그 설정
         setViewMode(3); // 뷰모드 설정
         _setBoardName(location.state?.boardName ?? 'ALL'); // 게시판 설정
@@ -49,13 +46,15 @@ const Main = () => {
         if (_boardName === 'ALL') {
             listLoader();
         } else {
+            if(_boardName){
             axios.get(url + '/postList/' + _boardName).then((Response) => {
                 setPostList_data(Response.data.reverse());
             });
             axios.get(url + '/tagList/' + _boardName).then((Response) => {
                 setTagList_data(Response.data);
             });
-            console.log('게시판 이동', _boardName);
+            mainTarget.current.style.display = 'block';
+        }
         }
     }, [_boardName])
 
@@ -69,7 +68,6 @@ const Main = () => {
     const tagListLoader = async () => {
         try {
             await axios.get(url + '/tagList').then((Response) => {
-                console.log('tagList :', Response.data);
                 setTagList_data(Response.data);
             });
             mainTarget.current.style.display = 'block';
@@ -84,7 +82,6 @@ const Main = () => {
     }
     const postListLoader = async () => {
         await axios.get(url + '/postList').then((Response) => {
-            console.log('postList :', Response.data);
             setPostList_data(Response.data.reverse());
         });
     }
@@ -100,22 +97,25 @@ const Main = () => {
     return (
         <div className={styles.Main}>
             {!tagList_data ? <Loader background='true' position='false' minHeight='100%' /> : null}
-            <div ref={mainTarget} className={styles.Main_container}>
+            <motion.div ref={mainTarget} className={styles.Main_container}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}>
                 <motion.p className={styles.Main_title}
-                    initial={{ opacity: 0, y: '30px' }}
+                    initial={{ opacity: 0, y: '20px' }}
                     animate={{ opacity: 1, y: '0px' }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}>
+                    transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}>
                     &lt; Main Page /&gt;
                 </motion.p>
                 <div className={styles.boardName}>
-                    <span class="material-symbols-outlined">assignment</span><span>{location.state?.boardName ? location.state?.boardName  === 'ALL' ? '전체글보기' : location.state?.boardName : ''}</span>
+                    <span className="material-symbols-outlined">assignment</span><span>{location.state?.boardName ? location.state?.boardName  === 'ALL' ? '전체글보기' : location.state?.boardName : '전체글보기'}</span>
                 </div>
                 <div className={styles.controller_container}>
                     <TagList data={tagList_data} selectTagEvent={selectTag} initTag={selectedTag}></TagList>
                     <ChangePostListMode changeViewMode={changeViewModeEvent} initMode={viewMode}></ChangePostListMode>
                 </div>
                 <PostList data={postList_data} mode={viewMode} selectedTag={selectedTag}></PostList>
-            </div>
+            </motion.div>
         </div>
     );
 }

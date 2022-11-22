@@ -3,13 +3,11 @@
 .TagList {
     display: flex;
     max-width: 80%;
-    min-height: 90px;
-    height: 90px;
+    max-height: 90px;
     margin-bottom: 20px;
     text-align: left;
     overflow: hidden;
     flex-wrap: wrap;
-    align-items: flex-end;
 
     li {
         margin-right: 17px;

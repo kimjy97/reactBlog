@@ -2,6 +2,7 @@ import styles from './Loader.module.scss';
 
 import { useEffect, useRef } from 'react';
 import ReactLoading from 'react-loading';
+import { motion } from 'framer-motion';
 
 const Loader = (props) => {
     const targetRef = useRef();
@@ -13,13 +14,16 @@ const Loader = (props) => {
         }
     });
     return (
-        <div ref={targetRef} className={styles.Loader_wrap} style={{
+        <motion.div ref={targetRef} className={styles.Loader_wrap} style={{
             position: props.position === 'true' ? 'absolute' : 'fixed',
             width: "100%",
             minHeight: props.minHeight,
             height: "100%",
             zIndex: "2000"
-        }}>
+        }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}>
             <div style={{
                 position: props.position === 'true' ? 'absolute' : 'fixed',
                 top: "50%",
@@ -33,7 +37,7 @@ const Loader = (props) => {
                     width={'50px'}
                 />
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,0 +1,59 @@
+@import '../../../common/common.scss';
+
+.NoticeList {
+    position: relative;
+    width: 100%;
+
+    .list {
+        display: flex;
+        padding: 16px 15px;
+        margin: 0px 0;
+        font-size: 0.9rem;
+        font-weight: 300;
+        text-align: left;
+        border-bottom: 1px solid rgb(30, 30, 30);
+        background-color: rgba(50, 50, 60, 0.8);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+        justify-content: space-between;
+        cursor: pointer;
+        transition: 150ms;
+
+        span {
+            font-weight: 500;
+        }
+
+        .noticeTitle {color: white; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+        .noticeDate {color: rgb(160,160,160); font-size: 0.75rem; line-height: 19.2px; white-space: nowrap;}
+
+        &:hover {
+            background-color: rgba(57, 57, 70, 1);;
+        }
+    }
+
+    .NoticeContent_container {
+        height: 0px;
+        margin-bottom: 30px;
+        padding: 30px;
+        opacity: 0;
+        background-color: rgb(38, 38, 45);
+        transition: 200ms ease-out;
+        &>.title {
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 1.5rem;
+        }
+        &>.date {
+            margin-bottom: 80px;
+            text-align: left;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color:rgb(183, 197, 230)
+        }
+        &>.contents {
+            margin-bottom: 30px;
+            text-align: left;
+            font-size: 1rem;
+        }
+    }
+}

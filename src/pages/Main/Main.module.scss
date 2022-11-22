@@ -8,12 +8,11 @@
 .Main_container {
     display: none;
     width: 100%;
-    min-height: 1000px;
     max-width: $contentsMaxWidth;
+    min-height: 1000px;
     margin: 0 auto;
     padding: 0 20px;
     padding-top: 60px;
-    padding-bottom: 500px;
     box-sizing: border-box;
     .boardName {
         display: flex;
@@ -21,13 +20,13 @@
         line-height: 44px;
         margin-bottom: 15px;
         text-align: left;
-        font-weight: 300;
+        font-weight: 350;
         
         align-items: center;
         &>span {
             height: 44px;
             line-height: 44px;
-            margin-right: 5px;
+            margin-right: 7px;
         }
     }
 }

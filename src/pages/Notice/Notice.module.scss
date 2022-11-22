@@ -1,0 +1,30 @@
+@import '../../common/common.scss';
+
+.Notice {
+    padding-top: $headerHeight;
+    padding-bottom: 200px;
+    flex: 1;
+}
+
+.Notice_container {
+    width: 100%;
+    max-width: $contentsMaxWidth;
+    min-height: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 60px;
+    padding-bottom: 500px;
+    box-sizing: border-box;
+    .Notice_title {
+        margin-bottom: 40px;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: rgb(255, 104, 104);
+    }
+    .Notice_subtitle {
+        margin-bottom: 80px;
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+    }
+}

@@ -120,7 +120,7 @@ const PostList = (props) => {
             {_postList}
             <div className={styles_1.noPostScreen} style={{ display: noData ? 'block' : 'none' }}>
                 <div>
-                <span class="material-symbols-outlined">error</span>
+                <span className="material-symbols-outlined">error</span>
                 <p>해당 게시판이 비어있습니다.</p>
                 </div>
             </div>
