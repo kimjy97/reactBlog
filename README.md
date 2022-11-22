@@ -64,3 +64,10 @@
  - 현재 게시판 location.state.boardName 이 비어있을때 '' 으로 출력되는 현상 수정
  - tagList의 css 부분 ( minHegiht -> maxHeight / hegiht 지우기 / align-items 지우기 )
 
+### 🛠 2022. 11. 23
+ - 공지사항 게시판 일부 구현
+ - 서버 공지사항 게시판 관련 라우터 추가
+ - 일부 버그 fix
+ - 공지사항 게시판 샘플 데이터 추가
+ - 일부 애니메이션 추가
+
