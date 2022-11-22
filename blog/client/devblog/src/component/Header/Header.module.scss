@@ -1,0 +1,32 @@
+@import '../../common/common.scss';
+
+.Header {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: $headerHeight;
+    line-height: $headerHeight;
+    backdrop-filter: none;
+    box-shadow: none;
+    justify-content: center;
+    z-index: $headerZ;
+
+    .Header_container {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 40px;
+        justify-content: space-between;
+
+        .Header_logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: $logoColor;
+        }
+        .Account {
+            font-size: 0.9rem;
+            font-weight: 100;
+        }
+    }
+}
+

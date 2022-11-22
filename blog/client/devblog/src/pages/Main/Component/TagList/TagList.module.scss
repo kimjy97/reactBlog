@@ -1,0 +1,48 @@
+@import '../../../../common/common.scss';
+
+.TagList {
+    display: flex;
+    max-width: 80%;
+    min-height: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    text-align: left;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    li {
+        margin-right: 17px;
+        font-size: 0.8rem;
+        font-weight: 300;
+        user-select: none;
+
+        p {
+            display: inline-block;
+            border-radius: 0px;
+            padding: 6px 12px;
+            margin-bottom: 15px;
+            color: rgb(210, 210, 210);
+            background-color: rgba(100, 100, 170, 0.3);
+            transition: 200ms;
+            white-space: nowrap;
+            cursor: pointer;
+
+            &>span {
+                margin-left: 10px;
+                opacity: 0.6;
+                user-select: none;
+            }
+
+            &:hover {
+                color: rgb(245, 245, 245);
+                background-color: rgba(150, 150, 255, 0.25);
+            }
+        }
+    }
+}
+
+.active {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgba(100, 100, 170, 0.7) !important;
+}
