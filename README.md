@@ -60,7 +60,7 @@
  - 전체적으로 코드의 가독성을 높임.
  - github push
 
-### 수정해야할 사항
+### 수정해야할 사항 (수정완료)
  - 현재 게시판 location.state.boardName 이 비어있을때 '' 으로 출력되는 현상 수정
  - tagList의 css 부분 ( minHegiht -> maxHeight / hegiht 지우기 / align-items 지우기 )
 
