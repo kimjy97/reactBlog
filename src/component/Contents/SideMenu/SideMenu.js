@@ -1,6 +1,6 @@
 import styles from './SideMenu.module.scss'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
@@ -11,6 +11,7 @@ const SideMenu = () => {
     const [boardList_data, setBoardList_data] = useState();
     const [allListNum, setAllListNum] = useState();
     const [activeBoard, setActiveBoard] = useState();
+    const mainTarget = useRef();
     const location = useLocation();
 
     useEffect(() => {
@@ -19,9 +20,19 @@ const SideMenu = () => {
     }, []);
 
     useEffect(() => {
-        if(!location.state?.boardName) setActiveBoard('ALL');
+        !location.state?.boardName ? setActiveBoard('ALL') : setActiveBoard(location.state?.boardName)
         boardListLoader();
-    }, [activeBoard, location])
+        if(location.state?.boardName === 'noBoard'){
+            mainTarget.current.style.width = '300px';
+        }else{
+            mainTarget.current.style.width = '350px';
+        }
+    }, [activeBoard, location]);
+
+    const refresh = () => {
+        window.location.reload();
+        console.log('새로고침');
+    }
 
     const boardListLoader = async () => {
         await axios.get(url + '/boardList').then((Response) => {
@@ -41,7 +52,7 @@ const SideMenu = () => {
     }
 
     return (
-        <div className={styles.SideMenu}>
+        <div className={styles.SideMenu} ref={ mainTarget }>
             <div className={styles.SideMenu_container}>
                 <div className={styles.profile_container}>
                     <motion.div className={styles.backGroundImg}
@@ -64,7 +75,7 @@ const SideMenu = () => {
                         <li><span className="material-symbols-outlined">search</span></li>
                         <li><span className="material-symbols-outlined">sticky_note_2</span></li>
                         <li><span className="material-symbols-outlined">share</span></li>
-                        <li onClick={()=> { window.scrollTo(0, 0); }}><span className="material-symbols-outlined">replay</span></li>
+                        <li onClick={()=> refresh()}><span className="material-symbols-outlined">replay</span></li>
                     </ul>
                     <hr></hr>
                     <ul className={styles.menuList_container}>

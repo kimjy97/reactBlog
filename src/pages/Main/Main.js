@@ -20,9 +20,10 @@ const Main = () => {
     const [selectedTag, setSelectedTag] = useState();
     const [viewMode, setViewMode] = useState();
     const [reload, setReload] = useState(0);
-    const mainTarget = useRef();
-    const location = useLocation();
     const [_boardName, _setBoardName] = useState();
+    const location = useLocation();
+    const mainTarget = useRef();
+    const boardNameTarget = useRef();
 
     // 초기값 설정 //
     useEffect(() => {
@@ -56,6 +57,7 @@ const Main = () => {
             mainTarget.current.style.display = 'block';
         }
         }
+        boardNameTarget.current.style.animation = `300ms ease ${styles.boardAni}`;
     }, [_boardName])
 
     // DATA LOADER 함수 //
@@ -104,10 +106,10 @@ const Main = () => {
                 <motion.p className={styles.Main_title}
                     initial={{ opacity: 0, y: '20px' }}
                     animate={{ opacity: 1, y: '0px' }}
-                    transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}>
+                    transition={{ delay: 0, duration: 0.5, ease: "easeOut" }}>
                     &lt; Main Page /&gt;
                 </motion.p>
-                <div className={styles.boardName}>
+                <div className={styles.boardName} ref={boardNameTarget} onAnimationEnd={() => {boardNameTarget.current.style.animation="none";}}>
                     <span className="material-symbols-outlined">assignment</span><span>{location.state?.boardName ? location.state?.boardName  === 'ALL' ? '전체글보기' : location.state?.boardName : '전체글보기'}</span>
                 </div>
                 <div className={styles.controller_container}>

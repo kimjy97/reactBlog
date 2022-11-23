@@ -1,15 +1,22 @@
-import { useEffect, useState } from 'react';
 import styles from './TagList.module.scss';
+
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 const TagList = (props) => {
     const _data = props.data;
     const [_postList, _setPostList] = useState();
     const [activeTag, setActiveTag] = useState();
+    const location = useLocation();
 
     // 태그 초기값 설정 //
     useEffect(() => {
         setActiveTag(props.initTag);
     }, [props.initTag]);
+    useEffect(() => {
+        setActiveTag('ALL');
+    }, [location.state?.boardName]);
 
     useEffect(() => {
         if (_data) {

@@ -1,0 +1,79 @@
+@import '../../common/common.scss';
+
+.Post {
+    width: 100%;
+    padding-top: $headerHeight;
+    padding-bottom: 500px;
+    flex: 1;
+    text-align: left;
+}
+
+.Post_container {
+    display: none;
+    width: 100%;
+    max-width: $postMaxWidth;
+    min-height: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    &>.postInfo {
+
+
+        &>.postTitle {
+            margin-top: 120px;
+            font-size: 2.3rem;
+            font-weight: 650;
+            color: rgb(255, 255, 255);
+            word-break: keep-all;
+            span:first-child{
+                color: rgb(255, 255, 180);
+            }
+        }
+        &>.postDateAndName {
+            margin-top: 25px;
+            margin-left: 20px;
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgb(188, 188, 188);
+            span {
+                margin: 0 10px;
+            }
+        }
+        &>.tags {
+            position: relative;
+            margin-top: 70px;
+        }
+        &>.tags ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &>.tags li {
+            margin-right: 12px;
+            &:hover p {
+                color: rgb(245, 245, 245);
+                background-color: rgba(150, 150, 255, 0.3);
+            }
+        }
+        &>.tags li p {
+            border-radius: 0px;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+            color: rgb(210, 210, 210);
+            background-color: rgba(100, 100, 170, 0.3);
+            transition: 200ms;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+    }
+    &>.postContents {
+        margin-top: 100px;
+        line-height: 1.8rem;
+        font-size: 1rem;
+        font-weight: 300;
+        & img {
+            width: 100%;
+        }
+    }
+}

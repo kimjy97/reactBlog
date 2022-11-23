@@ -3,6 +3,8 @@ import styles_2 from './PostList_2.module.scss';
 import styles_3 from './PostList_3.module.scss';
 
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 const PostList = (props) => {
@@ -85,6 +87,7 @@ const PostList = (props) => {
 
                     return (
                         <div className={styles_3.list_container} key={idx}>
+                            <Link to={'/post/'+e.id} state={{ postId: e.id, boardName: 'noBoard'}}>
                             <div className={styles_3.list}>
                                 <div className={styles_3.thumbnail} dangerouslySetInnerHTML={{ __html: thumbnailImg }} style={{ display: thumbnailImg ? 'block' : 'none' }}></div><div className={styles_3.thumbnail_cover} style={{ display: thumbnailImg ? 'none' : 'flex', position: thumbnailImg ? 'absolute' : 'static', backgroundColor: thumbnailImg ? 'rgba(0, 0, 0, 0.25)' : getRandomColor() }}><p>[{e.tags[0]}]<br></br>{e.title}</p></div>
                                 <div className={styles_3.inner}>
@@ -98,6 +101,7 @@ const PostList = (props) => {
                                     <div className={styles_3.name}>{e.name}</div>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     )
                 }
@@ -116,7 +120,10 @@ const PostList = (props) => {
 
 
     return (
-        <div className={mode === 3 ? styles_3.PostList : styles_1.PostList}>
+        <motion.div className={mode === 3 ? styles_3.PostList : styles_1.PostList}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}>
             {_postList}
             <div className={styles_1.noPostScreen} style={{ display: noData ? 'block' : 'none' }}>
                 <div>
@@ -124,7 +131,7 @@ const PostList = (props) => {
                 <p>해당 게시판이 비어있습니다.</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

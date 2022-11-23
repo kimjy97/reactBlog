@@ -3,9 +3,11 @@
 .SideMenu {
     position: relative;
     width: 350px;
+    min-width: 300px;
     background-color: rgb(38, 38, 43);
     box-sizing: content-box;
     box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+    transition: 100ms ease-out;
 }
 
 .SideMenu_container {

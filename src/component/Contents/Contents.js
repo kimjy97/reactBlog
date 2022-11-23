@@ -16,7 +16,7 @@ const Contents = () => {
             <AnimatePresence>
                 <Routes>
                     <Route exact path="/" element={<Main />}></Route>
-                    <Route exact path="/post" element={<Post />}></Route>
+                    <Route exact path="/post/:no" element={<Post />}></Route>
                     <Route exact path="/notice" element={<Notice />}></Route>
                 </Routes>
             </AnimatePresence>

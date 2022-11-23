@@ -11,24 +11,23 @@ const NoticeList = (props) => {
 
     useEffect(() => {
         if (_data) {
-            console.log(_data);
             _setNoticeList(_data.slice(0).map((e) =>
-                <li className={styles.list} key={e.id} onClick={() => {
+                <li className={currentData?.id === e.id ? `${styles.list} ${styles.active}` : styles.list} key={e.id} onClick={() => {
                     contentTarget.current.style.opacity = 1;
                     contentTarget.current.style.height = 'auto';
                     setCurrentData(e);
                     window.scrollTo(0, 0);
                 }}>
-                    <p className={styles.noticeTitle}>
+                    <div className={styles.noticeTitle}>
                         <span style={{ color: e.type === '공지' ? 'rgb(200,50,50)' : e.type === "EVENT" ? 'rgb(200,200,50)' : 'white' }}>
                             {e.type === "공지" ? '[공지]' : e.type === "EVENT" ? '[EVENT]' : ''}
-                        </span> {e.title}
-                    </p>
+                        </span> <span>{e.title}</span>
+                    </div>
                     <span className={styles.noticeDate}>{e.date}</span>
                 </li>
             ));
         }
-    }, [props]);
+    }, [props, currentData]);
 
     return (
         <motion.div className={styles.NoticeList}
@@ -36,6 +35,12 @@ const NoticeList = (props) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}>
             <div className={styles.NoticeContent_container} ref={contentTarget}>
+                <div className={styles.goBackButton} onClick={() => {
+                    contentTarget.current.style.opacity = 0;
+                    contentTarget.current.style.height = '0';
+                    setCurrentData(null);}}>
+                <span className="material-symbols-outlined">close</span>
+                </div>
                 <div className={styles.title}><span style={{ color: currentData?.type === '공지' ? 'rgb(200,50,50)' : currentData?.type === "EVENT" ? 'rgb(200,200,50)' : 'white' }}>
                     {currentData?.type === "공지" ? '[공지]' : currentData?.type === "EVENT" ? '[EVENT]' : ''}
                 </span> {currentData?.title}</div>
